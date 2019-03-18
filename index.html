@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My First Blog</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.8.6/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.8.6/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.8.6/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.8.6/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.8.6/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header" class="">
+  <div id="header-left">
+    <img src="image/web.jpg" alt="web" title="website"/>
+    <p> Blog học lập trình online- Cùng nhau chia sẻ kiến thức</p>
+  </div><!--end #header-left-->
+  <div id="header-right">
+    <ul>
+      <li><a href="#"> MÔ HÌNH HỌC TẬP</a></li>
+      <li><a href="#"> ĐIỀU KHOẢN SỬ DỤNG</a></li>
+      <li><a href="#"> ĐĂNG KÝ HỌC</a></li>
+    </ul>
+  </div><!--end #header-right-->
+</header><!-- /header -->
+
+<nav id="nav">
+  <ul class="menu">
+    <li class="my-blog"><a href="#" title="My blog"><i class="fa fa-home"></i> MY BLOG</a></li>
+    <li><a href="#" title="HỌC VIẾT CODE"><i class="fa fa-eye-open"></i> HỌC VIẾT CODE</a>
+             <ul class="sub-menu">
+                     <li><a href="#">HTML cơ bản</a></li>
+                     <li><a href="#">CSS cơ bản</a></li>    
+             </ul><!--end .sub-menu-->
+    </li>
+    <li><a href="#" title="HỌC THIẾT KẾ WEB"><i class="fa fa-pencil"></i> HỌC THIẾT KẾ WEB</a>
+             <ul class="sub-menu">
+                    <li><a href="#">Thiết kế layout</a></li>
+                    <li><a href="#">Photoshop</a></li>
+                    <li><a href="#">Typography</a></li>
+                    <li><a href="#">Javascript-Jquery-Dom</a></li>
+                    <li><a href="#">Màu sắc - color</a></li>
+             </ul><!--end .sub-menu-->
+    </li>
+    <li><a href="#" title="THƯ VIỆN THAM KHẢO"><i class="fa fa-book"></i> THƯ VIỆN THAM KHẢO</a>
+              <ul class="sub-menu">
+                <li><a href="#">Liên kết</a></li>
+              </ul><!--end .sub-menu-->
+    </li>
+    <li><a href="#" title="HỎI-ĐÁP"><i class="fa fa-question"></i> HỎI-ĐÁP</a></li>
+    <li>
+    <div class="form1">
+      <form action="Blog_Men_dai_ca_submit" method="get" accept-charset="utf-8">
+        <input type="text" name="Từ khóa" value="" placeholder="Từ khóa" size="30px/>
+        <i class="fa fa-search"></i>
+      </form>
+    </div><!--end .form1-->
+    </li>
+  </ul><!--end .menu-->
+</nav><!--end Nav-->
+
+<section id="section">
+  <div id="head-content">
+    <ul class="introduce">
+    <li> <a href="#introduce-content" ><h1>Giới thiệu về My Blog</h1></a>
+      <ul class="introduce-content" >
+        <li>
+    <h2> Trang dành cho các bạn đam mê công việc thiết kế website</h2>
+        <p>Bạn đang xem trang web chia sẻ và hướng dẫn các kiến thức, công cụ, phần mềm liên quan đến công việc thiết kế website từ cơ bản đến nâng cao. Bạn cũng có thể tìm hiểu thêm các công việc liên quan đến điều hành và bảo trì website như hosting, domain, seo ... .Công việc làm web luôn là một công việc thú vị, công việc thiết kế website luôn luôn là một sự lựa chọn của đông đảo các bạn trẻ trong định hướng nghề nghiệp suốt nhiều năm qua và chắc chắn sẽ vẫn bền vững trong tương lai. Học hỏi là một việc không thể dừng nếu bạn không muốn bị bỏ lại phía sau! Cám ơn các bạn đã ghé thăm :)</p>
+        </li></ul>
+      <li></ul>
+  </div>
+  </div><!-- end head-content-->
+
+  <div id="main-content">
+    <article class="part_1">
+         <div class="head-image">
+                 <img src="/image/html.jpg" alt="html"/>
+         </div><!--end .head-image-->
+         <div class="main">
+               <div class="button"><a href="#"> HTML</a></div><!--end .button-->
+       
+             <h1> Giới thiệu bài học HTML cơ bản cho người mới bắt đầu</h1>
+             <ul class="info">
+               <li><i class="fa fa-user"></i><em> Posted by:<a href="#"><span> Thuong Men</span></em></a></li>
+                   <li><i class="fa fa-calendar"></i> 27 Nov, 2016</li>
+                   <li><i class="fa fa-comment"></i> 456</a></li>
+             </ul>
+             <p> Đa số mọi người nghĩ rằng công việc thiết kế web thật khó, và tốn nhiều thời gian để thực hiện điều đó. Nhưng!!! Sự thật không phải như vậy, thiết kế web là một công việc khá đơn giản, bạn có thể tự tay thiết kế một trang web cho riêng mình mà không phải nhờ tới sự can thiệp của người khác,...</p>
+             <span class="xemtiep">
+                      <a href="#">Xem tiếp <i class="fa fa-chevron-right"></i></a>
+             </span>
+       </div><!-- end .main--><!-- phần nội dung chính, các bài post-->
+
+       <div class="footer-part">
+                <ul>
+                     <li> Chia sẻ trên:</li>
+                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                     <li><a href="#">Facebook</a></li>
+                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="#">Twitter</a></li>
+              </ul>
+       </div><!--end footer-part-->
+    </article><!--end .part_1-->
+
+    <article class="part_2">
+         <div class="head-image">
+                 <img src="/image/css_3.jpg" alt="css"/>
+         </div><!--end .head-image-->
+
+         <div class="main">
+               <div class="button"><a href="#"> CSS</a></div>
+             <h1> Giới thiệu bài học CSS cơ bản</h1>
+           <ul class="info">
+           <li><i class="fa fa-user"></i><em> Posted by:<a href="#"><span> Thuong Men</span></em></a></li>
+                   <li><i class="fa fa-calendar"></i> 15 Nov, 2016</li>
+                   <li><i class="fa fa-comment"></i> 123</a></li>
+             </ul>
+             <p> Đa số mọi người nghĩ rằng công việc thiết kế web thật khó, và tốn nhiều thời gian để thực hiện điều đó. Nhưng! Sự thật không phải như vậy, thiết kế web là một công việc khá đơn giản, bạn có thể tự tay thiết kế một trang web cho riêng mình mà không phải nhờ tới sự can thiệp của người khác,...</p>
+             <span class="xemtiep">
+                     <a href="#">Xem tiếp <i class="fa fa-chevron-right"></i></a>
+             </span>
+       </div><!-- end .main--><!-- phần nội dung chính, các bài post-->
+
+       <div class="footer-part">
+                <ul>
+                     <li> Chia sẻ trên:</li>
+                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                     <li><a href="#">Facebook</a></li>
+                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="#">Twitter</a></li>
+              </ul>
+       </div><!--end footer-part-->
+    </article><!--end .part_2-->
+
+    <article class="part_3">
+         <div class="head-image">
+                 <img src="/image/css_2.png" alt="css"/>
+         </div><!--end .head-image-->
+
+         <div class="main">
+              <div class="button"><a href="#"> CSS</a></div><!--end .button-->
+       
+             <h1> Thủ thuật CSS: những kiến thức cơ bản về inline và block</h1>
+             <ul class="info">
+               <li><i class="fa fa-user"></i><em> Posted by:<a href="#"><span> Thuong Men</span></em></a></li>
+                   <li><i class="fa fa-calendar"></i> 15 Oct, 2016</li>
+                   <li><i class="fa fa-comment"></i> 69</a></li>
+             </ul>
+             <p> Đa số mọi người nghĩ rằng công việc thiết kế web thật khó, và tốn nhiều thời gian để thực hiện điều đó. Nhưng! Sự thật không phải như vậy, thiết kế web là một công việc khá đơn giản, bạn có thể tự tay thiết kế một trang web cho riêng mình mà không phải nhờ tới sự can thiệp của người khác,...</p>
+             <span class="xemtiep">
+                     <a href="#">Xem tiếp <i class="fa fa-chevron-right"></i></a>
+             </span>
+       </div><!-- end .main--><!-- phần nội dung chính, các bài post-->
+
+       <div class="footer-part">
+                <ul>
+                     <li> Chia sẻ trên:</li>
+                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                     <li><a href="#">Facebook</a></li>
+                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="#">Twitter</a></li>
+              </ul>
+       </div><!--end footer-part-->
+    </article><!--end .part_3-->
+
+    <article class="part_4">
+         <div class="head-image">
+                 <img src="/image/image-responsive-blogger.png" alt="reponesive css"/>
+         </div><!--end .head-image-->
+
+         <div class="main">
+               <div class="button"><a href="#">Reponsive CSS</a></div><!--end .button-->
+       
+             <h1> Thủ thuật reposive CSS đơn giản</h1>
+             <ul class="info">
+               <li><i class="fa fa-user"></i><em> Posted by:<a href="#"><span> Thuong Men</span></em></a></li>
+                   <li><i class="fa fa-calendar"></i> 3 Sep, 2016</li>
+                   <li><i class="fa fa-comment"></i> 94</a></li>
+             </ul>
+             <p> Đa số mọi người nghĩ rằng công việc thiết kế web thật khó, và tốn nhiều thời gian để thực hiện điều đó. Nhưng! Sự thật không phải như vậy, thiết kế web là một công việc khá đơn giản, bạn có thể tự tay thiết kế một trang web cho riêng mình mà không phải nhờ tới sự can thiệp của người khác,...</p>
+             <span class="xemtiep">
+                     <a href="#">Xem tiếp <i class="fa fa-chevron-right"></i></a>
+             </span>
+       </div><!-- end .main--><!-- phần nội dung chính, các bài post-->
+
+       <div class="footer-part">
+                <ul>
+                     <li> Chia sẻ trên:</li>
+                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                     <li><a href="#">Facebook</a></li>
+                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="#">Twitter</a></li>
+              </ul>
+        </div><!--end footer-part-->
+    </article><!--end .part_4-->
+
+    <article class="part_5">
+         <div class="head-image">
+                 <img src="/image/js.png" alt="java"/>
+         </div><!--end .head-image-->
+
+         <div class="main">
+               <div class="button"><a href="#"> Javascript-Jquery-Dom</a></div><!--end .button-->
+       
+             <h1> Giới thiệu thiết kế web với Javascript</h1>
+             <ul class="info">
+               <li><i class="fa fa-user"></i><em> Posted by:<a href="#"><span> Thuong Men</span></em></a></li>
+                    <li><i class="fa fa-calendar"></i> 9 Aug, 2016</li>
+                    <li><i class="fa fa-comment"></i> 169</a></li>
+             </ul>
+             <p> Đa số mọi người nghĩ rằng công việc thiết kế web thật khó, và tốn nhiều thời gian để thực hiện điều đó. Nhưng! Sự thật không phải như vậy, thiết kế web là một công việc khá đơn giản, bạn có thể tự tay thiết kế một trang web cho riêng mình mà không phải nhờ tới sự can thiệp của người khác,...</p>
+             <span class="xemtiep">
+                      <a href="#">Xem tiếp <i class="fa fa-chevron-right"></i></a>
+             </span>
+       </div><!-- end .main--><!-- phần nội dung chính, các bài post-->
+
+       <div class="footer-part">
+                <ul>
+                     <li> Chia sẻ trên:</li>
+                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                     <li><a href="#">Facebook</a></li>
+                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="#">Twitter</a></li>
+              </ul>
+       </div><!--end footer-part-->
+    </article><!--end .part_5-->
+
+    <div id="page-number">
+      <span class="number">1/5</span>
+      <span class="next"><a href="#">></a></span>
+    </div><!--end #page-number-->
+
+  </div><!--end main-content-->
+
+</section><!--end section-->
+
+<div id="sidebar">
+  <div id="sidebar-top">
+    <h1>ĐĂNG KÝ NHẬN BẢN TIN</h1>
+    <h3> Đăng ký để nhận mail cập nhật các tin tức, bài viết mới nhất từ chúng tôi</h3>
+    <div class="form2">
+      <form action="Blog_Men_dai_ca_submit" method="get" accept-charset="utf-8">
+        <input type="email" name="email" value="" placeholder="email" class="email" size="30px"/>
+        <input type="submit" name="đăng ký" value="Đăng ký" class="dangky"/>
+      </form>
+    </div><!--end .form2-->
+  </div><!--end sidebar-top-->
+  <div id="sidebar-bottom">
+    <h1>CHỦ ĐỀ</h1>
+    <ul class="menu2">
+      <li><a href="#">HTML CƠ BẢN</a>
+           <ul class="sub-menu2">
+               <li><a href="#">10 Bài cơ bản học HTML cho người mới bắt đầu</a></li>
+           </ul>
+      </li>
+      <li><a href="#">CSS CƠ BẢN</a>
+           <ul class="sub-menu2">
+             <li><a href="#">24 Bài cơ bản CSS</a></li>
+             <li><a href="#">Thủ thuật CSS</a></li>
+             <li><a href="#">Reponsive CSS</a></li>
+           </ul>
+      </li>
+      <li><a href="#">JAVASCRIPT- DOM- JQUERY</a>
+           <ul class="sub-menu2">
+               <li><a href="#">JAVASCRIPT</a>
+             <li><a href="#">DOM</a></li>
+               <li><a href="#">JQUERY</a></li>
+           </ul>
+      </li>
+      <li><a href="#">THIẾT KẾ LAYOUT</a>
+           <ul class="sub-menu2">
+             <li><a href="#">Wireframe</a></li>
+             <li><a href="#" title="">Bootstrap</a></li>
+           </ul>
+      </li>
+      <li><a href="#">PHOTOSHOP</a>
+           <ul class="sub-menu2">
+            <li><a href="#">Tự học Photoshop cơ bản</a></li>
+           </ul>
+      </li>
+      <li><a href="#">THAM KHẢO</a>
+      </li>
+    </ul>
+  </div><!--end sidebar-bottom-->
+</div><!--end sidebar-->
+<footer id="footer">
+  <p>Copyright &copy 2016 <span>Mến Đại Ca</span>| Powered by Thuong Men</p>
+</footer><!--end footer-->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
+</html>
